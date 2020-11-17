@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       // "phrase" is the text entered by the user - right now there are some test words hard coded to make the process of testing your code a bit faster and easier
       // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
-      phrase: "echo through yummy squeal queen fry",
+      phrase: "echo trohugh yummy squeal queen fry",
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear."
     }
@@ -33,7 +33,9 @@ class App extends Component {
       console.log("vowelsArray:", vowelsArray)
       
       // your code here!
-
+// Indexof to find the first vowel.
+// Then we would substring from that point on
+// Then we could push 
       // Remember: console.log is your friend :)
 
 
