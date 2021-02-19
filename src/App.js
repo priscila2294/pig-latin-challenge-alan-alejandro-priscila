@@ -29,11 +29,41 @@ class App extends Component {
 
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
-      })
-      console.log("vowelsArray:", vowelsArray)
-      
-      // your code here!
 
+      })
+
+    //  console.log("vowelsArray:", vowelsArray)
+
+      let firstVowel = vowelsArray[0]
+
+      //console.log("firstVowel", firstVowel);
+
+      let vowelLocator = currentWord.indexOf(firstVowel)
+
+      console.log("vowelLocator", vowelLocator);
+      if(vowelLocator === 0 ){
+        return `${ currentWord }way`
+        //trying to get it to check if there is a "q" in the spot before the first vowel
+      } else if(vowelLocator > 0 && currentWord.charAt(vowelLocator - 1) === "q" && firstVowel === "u") {
+        let secondHalfQ = currentWord.substring(vowelLocator + 1)
+        let firstHalfQ = currentWord.substring(0, vowelLocator + 1)
+console.log("secondHalf", secondHalfQ);
+console.log("firstHalf", firstHalfQ);
+        return  secondHalfQ + firstHalfQ + "ay"
+      }else if(vowelLocator > 0){
+        let secondHalf = currentWord.substring(vowelLocator)
+        let firstHalf = currentWord.substring(0, vowelLocator)
+
+        return secondHalf + firstHalf + "ay"
+      }
+//if(vowelsArray !== ){
+
+//}return add y to end
+      // your code here!
+//The first condition that we should address is if a word starts with a vaule we should just concat "way" at the end of the word using a + sign
+// Indexof to find the first vowel.
+// Then we would substring from that point on to get the rest of the word
+// Then we somehow push the first part of the word before  the first vowel into the back of the array to make the word in pig latin
       // Remember: console.log is your friend :)
 
 
@@ -100,7 +130,7 @@ class App extends Component {
           <button onClick={ this.restartGame }>Clear</button>
         </div>
         <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by Alan Priscila Alejandro</footer>
       </React.Fragment>
     )
   }
